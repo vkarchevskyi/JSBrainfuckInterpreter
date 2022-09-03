@@ -32,11 +32,12 @@ function brainLuck(code, input){
               } else {
                 openBrackets--;
               }
-
+              
               if (openBrackets == -1) {
                 i = nextClosedBracket;
                 break;
               }
+
               shiftCoordinate = Math.min(nextOpenBracket + 1, nextClosedBracket + 1);
             }
           }
@@ -62,25 +63,3 @@ function brainLuck(code, input){
 
   return output;
 }
-
-let code = ',>+>>>>++++++++++++++++++++++++++++++++++++++++++++>++++++++++++++++++++++++++++++++<<<<<<[>[>>>>>>+>+<<<<<<<-]>>>>>>>[<<<<<<<+>>>>>>>-]<[>++++++++++[-<-[>>+>+<<<-]>>>[<<<+>>>-]+<[>[-]<[-]]>[<<[>>>+<<<-]>>[-]]<<]>>>[>>+>+<<<-]>>>[<<<+>>>-]+<[>[-]<[-]]>[<<+>>[-]]<<<<<<<]>>>>>[++++++++++++++++++++++++++++++++++++++++++++++++.[-]]++++++++++<[->-<]>++++++++++++++++++++++++++++++++++++++++++++++++.[-]<<<<<<<<<<<<[>>>+>+<<<<-]>>>>[<<<<+>>>>-]<-[>>.>.<<<[-]]<<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+>-]>[<+>-]<<<-]';
-let input = '\n';
-
-console.log(brainLuck(code, input));
-
-
-
-/*
-
-C=
-ÿ
-(Program Start) 	char array[30000] = {0}; char *ptr = array;
-> 	++ptr;
-< 	--ptr;
-+ 	++*ptr;
-- 	--*ptr;
-. 	putchar(*ptr);
-, 	*ptr = getchar(); 
-[ 	while (*ptr) {
-] 	}
-*/
